@@ -1,0 +1,10 @@
+interface ExampleInterface
+{
+	void newQuestion(in string question, in string answer);
+	string getRandomQuestion();
+	string answerQuestion(in string userAnswer);
+	string getQuestion(in short index);
+	void setRandomIndex();
+	void removeQuestion(in short index);
+	short getSize();
+};
