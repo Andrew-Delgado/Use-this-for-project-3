@@ -7,7 +7,13 @@
 #include <time.h>
 
 using namespace std;
-
+/**
+ * newQuestion method
+ * @param q = question passed to server
+ * @param a = answer passed to server
+ * Allows client to create a question and answer
+ * Then stores into seperate vectors
+ */
 void MyExampleInterface_impl::newQuestion(const char * q, const char * a)
 {
 	string qs = string(q);
@@ -16,6 +22,10 @@ void MyExampleInterface_impl::newQuestion(const char * q, const char * a)
 	answers.push_back(ans);
 }
 
+/**
+ * getRandomQuestion method
+ * Allocate char * qout and use a random index to return random question
+ */ 
 char * MyExampleInterface_impl::getRandomQuestion()
 {
 	 char * qout = CORBA::string_alloc(100);
@@ -30,6 +40,12 @@ char * MyExampleInterface_impl::getRandomQuestion()
 	 return qout;
 }
 
+/**
+ * getQuestion method
+ * @param index = index of the question to return
+ * Method to return one question from the questions vector
+ * Used to return all the questions available to the client
+ */ 
 char * MyExampleInterface_impl::getQuestion(const short index)
 {
 	char * qout = CORBA::string_alloc(100);
@@ -43,7 +59,13 @@ char * MyExampleInterface_impl::getQuestion(const short index)
 	return qout;
 }
 
-char * MyExampleInterface_impl::answerQuestion(const char * userAnswer)//make this return true or false
+/**
+ * answerQuestion method
+ * @param userAnswer = Answer passed to server by client
+ * Method to check answer against certain question
+ * Returns true if answer is correct, false otherwise
+ */ 
+char * MyExampleInterface_impl::answerQuestion(const char * userAnswer)
 {
 	char * result = CORBA::string_alloc(100);
 
@@ -61,6 +83,11 @@ char * MyExampleInterface_impl::answerQuestion(const char * userAnswer)//make th
 	 }
 }
 
+/**
+ * removeQuestion method
+ * @param index = index of the question to remove
+ * Used by client to remove a specific question and answer from server
+ */ 
 void MyExampleInterface_impl::removeQuestion(const short index)
 {	
 	int actualIndex = index - 1;
@@ -72,13 +99,20 @@ void MyExampleInterface_impl::removeQuestion(const short index)
 	answers.shrink_to_fit();
 }
 
+/**
+ * setRandomIndex method
+ * Used to return a random index for a random question
+ */ 
 void MyExampleInterface_impl::setRandomIndex()
 {
 	srand(time(0));
 	randomIndex = rand()%questions.size();
 }
 
-
+/**
+ * getSize method
+ * Returns size of the questions vector
+ */
 short MyExampleInterface_impl::getSize()
 {
 	return questions.size();
