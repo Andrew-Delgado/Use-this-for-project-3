@@ -145,7 +145,11 @@ int main(int argc, char ** argv)
 						char * question = service_server->getQuestion(i);
 						cout << i+1 << ": " << question << endl;
 					}
-					cin >> index;
+					while(!(cin >> index)) {
+						cin.clear();
+						cin.ignore();
+						cout << "Invalid input. Try again: " << endl;
+					}
 					cin.ignore();
 
 					service_server->removeQuestion(index);
