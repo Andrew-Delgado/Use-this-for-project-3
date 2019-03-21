@@ -1,3 +1,8 @@
+/**
+ * @authors Andrew Delgado and Christian Baiza
+ * @date 2-20-2019
+ * @version 1.0
+ */
 #ifndef __MY_EXAMPLE_INTERFACE_IMPL_H__
 #define __MY_EXAMPLE_INTERFACE_IMPL_H__
 
