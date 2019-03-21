@@ -150,9 +150,15 @@ int main(int argc, char ** argv)
 						cin.ignore();
 						cout << "Invalid input. Try again: " << endl;
 					}
-					cin.ignore();
-
-					service_server->removeQuestion(index);
+					if (index > service_server->getSize()) {
+						cin.clear();
+						cin.ignore();
+						cout << "Invalid input. Try again: " << endl;
+					}
+					else {
+						cin.ignore();
+						service_server->removeQuestion(index);
+					}
 				}
 				else
 				{
