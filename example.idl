@@ -1,0 +1,16 @@
+/**
+ * @authors Andrew Delgado and Christian Baiza
+ * @date 2-20-2019
+ * @version 1.0
+ */
+interface ExampleInterface
+{
+	void newQuestion(in string question, in string answer);
+	void setRandomIndex();
+	void removeQuestion(in short index);
+
+	string getRandomQuestion();
+	string answerQuestion(in string userAnswer);
+	string getQuestion(in short index);
+	short getSize();
+};
