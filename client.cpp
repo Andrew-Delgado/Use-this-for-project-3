@@ -1,3 +1,14 @@
+/**
+ * @authors Andrew Delgado and Christian Baiza
+ * @date 2-20-2019
+ * @version 1.0
+ * 
+ * The Client class allows the user to create a list of question and answers.
+ * The user is then prompted to answer the questions.
+ * 
+ * This is done by connecting to a server and calling server-side functions.
+ * All questions, answers and other data needed is stored on server.
+ */
 #include "example.hh"
 #include <iostream>
 #include <CORBA.h>
@@ -193,20 +204,4 @@ int main(int argc, char ** argv)
 }
 
 
-
-// void answerQuestion(int index)
-// {
-// 	string userAnswerString;
-// 	char * userAnswer;
-
-// 	char * question = service_server->getRandomQuestion(index)
-// 	cout << "Quesion: " << question << endl;
-// 	cout << "Answer: ";
-// 	getline(userAnswerString)
-// 	userAnswer = userAnswerString.c_str();
-
-// 	char * result = service_server->checkAnswer(index, userAnswer) //return true/false char
-
-// 	cout << "Result: " << result << endl;
-// }
 
