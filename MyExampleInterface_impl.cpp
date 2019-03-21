@@ -1,3 +1,9 @@
+/**
+ * @authors Andrew Delgado and Christian Baiza
+ * @date 2-20-2019
+ * @version 1.0
+ */
+
 #include "MyExampleInterface_impl.h"
 #include <iostream>
 #include <vector>
